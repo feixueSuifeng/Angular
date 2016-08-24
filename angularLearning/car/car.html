@@ -1,0 +1,37 @@
+<div>
+    <div>
+    <table border="1" id="emp">
+        <tr>
+            <th>艾迪</th>
+            <th>姓名</th>
+            <th>性别</th>
+            <th>身高</th>
+            <th>爱好</th>
+        </tr>
+
+        <tr ng-repeat="item in data">
+            <td>{{item.id}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.sex}}</td>
+            <td>{{item.siz}}</td>
+            <td>{{item.hobby}}</td>
+        </tr>
+        <tr>
+            <td><input type="text" placeholder="快捷查询" id="search" /> </td>
+            <td><input type="button" value="上一页" class="handle" /></td>
+            <td><input type="button" value="下一页" class="handle" /></td>
+            <td><input type="button" value="首页" class="handle"/></td>
+            <td><input type="button" value="尾页" class="handle"/></td>
+        </tr>
+    </table>
+
+    </div>
+    <div>
+
+        <img  ng-src="{{goods.src}}" alt=""  class="CarOrder"/>
+
+    </div>
+
+    <div id="userLogin"> 请登录！！！</div>
+
+</div>

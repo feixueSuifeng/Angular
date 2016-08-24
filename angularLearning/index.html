@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en"  id="ng-app" ng-app="App">
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8,IE=9,IE=10,IE=11">
+    <title>&hearts;安哥拉</title>
+    <link rel="stylesheet" href="//apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="index.css">
+    <!--<script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular-animate.min.js"></script>-->
+    <script type="text/javascript" src="../json2.js"></script>
+    <script type="text/javascript" src="../jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="../angular.min.js"></script>
+    <script type="text/javascript" src="../angular-ui-router.js"></script>
+
+
+
+    <script type="text/javascript" src="min.js"></script>
+    <script type="text/javascript" src="router.js"></script>
+    <script type="text/javascript" src="car/car.js"></script>
+    <script type="text/javascript" src="home/home.js"></script>
+    <script type="text/javascript" src="detailes/det.js"></script>
+</head>
+<body>
+<header>
+<!--
+    <input type="text" placeholder="">
+-->
+    <div id="nav" ng-controller="nav">
+        <ul>
+            <li id="home">HOME</li>
+            <li id="goods">GOODS</li>
+            <li id="order">ORDER</li>
+        </ul>
+    </div>
+</header>
+    <div id="content" ui-view=""></div>
+</body>
+</html>

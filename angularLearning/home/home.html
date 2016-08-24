@@ -1,0 +1,124 @@
+<div>
+    <div ng-init="flag=true">
+
+        <h3>1.ng-repeat用法</h3>
+        <select name="" id="">
+
+            <option value="" ng-repeat="item in names ">{{item}}</option>
+        </select>
+
+        <h3>2.ng-options用法(可以不用数据绑定)</h3>
+
+        <select name="" ng-model="name" ng-options="item for item in names"></select> {{name}}
+
+        <h3>3.ng-disabled的用法</h3>
+
+        <input type="button" value="点击" ng-disabled="flag"/>
+        <input type="checkbox" ng-model="flag"/>HTML
+        <input type="checkbox" ng-model="flag"/>JS
+        <input type="checkbox" ng-model="flag"/>XHTML
+        <input type="checkbox" ng-model="flag"/>XML
+        <input type="checkbox" ng-model="flag"/>全选
+        {{flag}}
+
+        <h3>4.ng-show的用法（布尔值来判断）</h3>
+        <p ng-show="true">我是可见</p>
+        <p ng-show="false">我是不可见</p>
+        <p ng-init="a=20" ng-show="a>10">我是可见的(a=10是条件，a》10是判断，值为布尔值)</p>
+        <h3>5.ng-hide的用法 跟show一样。</h3>
+        <p ng-hide="true">我是可见</p>
+        <p ng-hide="false">我是不可见</p>
+        <p ng-init="a=20" ng-hide="a>10">我是可见的(a=10是条件，a》10是判断，值为布尔值)</p>
+
+        <h3>6. 实现点击隐藏与显示</h3>
+        <button ng-click="btn()">隐藏/显示</button>
+        <p ng-show="!flags">
+            姓：<input type="text" ng-model="txt"/>
+            名：<input type="text" ng-model="word"/>
+            {{txt +word}}
+        </p>
+
+
+        <h3>7. 表单（控件）</h3>
+
+
+        <form novalidate>
+            First Name:<br>
+            <input type="text" ng-model="user.firstName"><br>
+            Last Name:<br>
+            <input type="text" ng-model="user.lastName">
+            <br><br>
+            <button ng-click="reset()">RESET</button>
+        </form>
+        <p>form = {{user}}</p>
+        <p>master = {{master}}</p>
+        <h3>8.表单验证</h3>
+        <form name="myForm" novalidate>
+            <p>用户名:<br>
+                <input type="text" name="user" ng-model="user" required>
+                <span style="color:red" ng-show="myForm.user.$dirty && myForm.user.$invalid">
+<span ng-show="myForm.user.$error.required">用户名是必须的。</span>
+</span>
+            </p>
+
+            <p>邮箱:<br>
+                <input type="email" name="email" ng-model="email" required>
+<span style="color:red" ng-show="myForm.email.$dirty && myForm.email.$invalid">
+<span ng-show="myForm.email.$error.required">邮箱是必须的。</span>
+<span ng-show="myForm.email.$error.email">非法的邮箱地址。</span>
+</span>
+            </p>
+            <p>
+                <input type="submit"
+                       ng-disabled="myForm.user.$dirty && myForm.user.$invalid ||
+myForm.email.$dirty && myForm.email.$invalid">
+            </p>
+
+        </form>
+    </div>
+
+    <h3>9.全局API（数据类型）</h3>
+    <p>正常：{{x1}} </p>
+    <p>变小写：{{x2}} </p>
+    <p>正常：{{x3}} </p>
+    <p>变大写：{{x4}} </p>
+
+    <h3> 10.angular跟bootstrap结合</h3>
+
+    .....
+
+    <h3> 11.angular包含（ng-include）</h3>
+
+    <div class="container">
+        <div ng-include="'test1.html'"></div>
+        <div ng-include="'test2.html'"></div>
+    </div>
+
+    ......
+
+
+    <h3>12. angular 动画（引入 angular-animate.min.js 库。）</h3>
+        <p>http://apps.bdimg.com/libs/angular.js/1.4.6/angular-animate.min.js"></p>
+        <p><b>二级菜单</b></p>
+    <h3>13.angular 依赖注入</h3>
+    <p>wiki 上的解释是：依赖注入（Dependency Injection，简称DI）是一种软件设计模式，在这种模式下，一个或更多的依赖（或服务）被注入（或者通过引用传递）到一个独立的对象（或客户端）中，然后成为了该客户端状态的一部分。
+    该模式分离了客户端依赖本身行为的创建，这使得程序设计变得松耦合，并遵循了依赖反转和单一职责原则。与服务定位器模式形成直接对比的是，它允许客户端了解客户端如何使用该系统找到依赖
+
+    </p>
+
+    <b>以下为5个核心组件机制，用来作为依赖注入（实现依赖注入的方法）。</b>
+    <ul>
+        <li>value（Value 是一个简单的 javascript 对象，用于向控制器传递值（配置阶段））</li>
+        <li>factory（factory 是一个函数用于返回值。在 service 和 controller 需要时创建。
+            通常我们使用 factory 函数来计算或返回值。）</li>
+        <li>service（AngularJS 中你可以创建自己的服务，或使用内建服务。）</li>
+        <li>provider（AngularJS 中通过 provider 创建一个 service、factory等(配置阶段)。
+            Provider 中提供了一个 factory 方法 get()，它用于返回 value/service/factory。）</li>
+        <li>constant（constant(常量)用来在配置阶段传递数值，注意这个常量在配置阶段是不可用的。）</li>
+    </ul>
+
+     <p>&hearts;value</p>
+        <div>
+        </div>
+
+</div>
